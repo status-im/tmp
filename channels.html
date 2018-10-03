@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Channel List</title>
+		<style> a {  display: block; }</style>
+	</head>
+	<body>
+		<h1>Status Channels</h1>
+		<div class='chans'>
+			#dac-zero
+			#ethereum
+			#sitg-one
+			#sitg-two
+			#status
+			#status-core
+			#status-core-infra
+			#status-core-devs
+			#status-dao
+			#status-peopleops
+			#status-principles
+			#status-core-chat
+			#status-desktop
+			#status-mobile
+			#status-weather
+			#ux-research
+			#ux-ia-wp2
+			#ux-model-wp-1
+			#ux2018
+			#watercooler
+		</div>
+		<script>
+			var div = document.getElementsByClassName('chans')[0],
+					list = div.innerHTML;
+			div.innerHTML = '';
+			list = list.split('\n');
+			for (var i in list) {
+				chan = list[i].trim();
+				if (chan) {
+					link = document.createElement('a');
+					link.text = chan;
+					link.setAttribute('href', ' https://get.status.im/chat/public/'+chan.substr(1));
+					div.appendChild(link);
+					console.log(chan);
+				}
+			}
+		</script>
+	</body>
+</html>
